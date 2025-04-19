@@ -4,31 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Orfan Usef | Portfolio</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+
   <style>
+    :root {
+      --bg-light: #fff8f1;
+      --text-light: #3e2723;
+      --bg-dark: #121212;
+      --text-dark: #f5f5f5;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background: url('https://h2.gifposter.com/bingImages/GoremeTurkey_1920x1080.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: #3e2723;
+      color: var(--text-light);
       margin: 0;
       padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background: #121212;
+      color: var(--text-dark);
     }
 
     header {
-      background-color: rgba(109, 76, 65, 0.9); /* #6d4c41 */
+      background-color: rgba(109, 76, 65, 0.95);
       color: white;
-      padding: 1.5rem;
+      padding: 1rem;
       text-align: center;
-      backdrop-filter: blur(2px);
     }
 
     section {
-      background-color: rgba(255, 255, 255, 0.85);
+      background-color: rgba(255, 255, 255, 0.8);
       padding: 2rem;
       max-width: 800px;
       margin: 2rem auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
+
+    body.dark-mode section {
+      background-color: rgba(30, 30, 30, 0.8);
     }
 
     h2 {
@@ -42,24 +59,53 @@
     }
 
     footer {
-      background-color: rgba(62, 39, 35, 0.9); /* #3e2723 */
+      background-color: #3e2723;
       color: white;
       text-align: center;
       padding: 1rem;
       margin-top: 2rem;
-      backdrop-filter: blur(2px);
+    }
+
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #4e342e;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    .toggle-btn:hover {
+      background-color: #6d4c41;
+    }
+
+    a {
+      color: #d84315;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
+
 <body>
+  <button class="toggle-btn" onclick="toggleMode()">🌙 Toggle Mode</button>
+
   <header>
     <h1>Orfan Usef</h1>
     <p>AI Explorer | Content Creator | Future SaaS Builder</p>
   </header>
-  
+
   <section>
     <h2 class="section-title">👤 About Me</h2>
-    <p>Hi! I'm يوسف (Orfan Usef), an INTP-A mind focused on innovation, AI, psychology, and marketing. I explore how to combine technology and emotion to solve big problems. I'm currently working on an AI system that understands human emotion using quantum computing and biotechnology.</p>
+    <p>Hi! I'm (Orfan Usef), an INTP-A mind focused on innovation, AI, psychology, and marketing. I explore how to combine technology and emotion to solve big problems. I'm currently working on an AI system that understands human emotion using quantum computing and biotechnology.</p>
   </section>
 
   <section>
@@ -73,12 +119,20 @@
 
   <section>
     <h2 class="section-title">📬 Contact</h2>
-    <p>DM me on Instagram: <strong>@yooscripts</strong></p>
+    <p>DM me on Instagram: 
+      <a href="https://instagram.com/this_is_touaja" target="_blank">@yooscripts</a>
+    </p>
   </section>
 
   <footer>
     <p>&copy; 2021 Orfan Usef. Built with love, coffee, and curiosity.</p>
   </footer>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 </body>
 </html>
 
