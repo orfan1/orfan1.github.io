@@ -2,16 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Orfan Usef | Portfolio</title>
-  <link rel="icon" href="favicon.png" type="image/png" />
-
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
     :root {
-      --bg-light: #fff8f1;
+      --bg-light: #ffffff;
       --text-light: #3e2723;
-      --bg-dark: #121212;
-      --text-dark: #f5f5f5;
+      --header-light: #6d4c41;
+      --section-title-light: #4e342e;
+      --footer-light: #3e2723;
+
+      --bg-dark: #1c1c1c;
+      --text-dark: #ffffff;
+      --header-dark: #2c2c2c;
+      --section-title-dark: #ffcc80;
+      --footer-dark: #121212;
     }
 
     body {
@@ -21,35 +27,37 @@
       color: var(--text-light);
       margin: 0;
       padding: 0;
-      transition: background-color 0.3s, color 0.3s;
+      transition: all 0.3s ease;
     }
 
     body.dark-mode {
-      background: #121212;
+      background-color: var(--bg-dark);
       color: var(--text-dark);
     }
 
     header {
-      background-color: rgba(109, 76, 65, 0.95);
+      background-color: var(--header-light);
       color: white;
       padding: 1rem;
       text-align: center;
     }
 
-    section {
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 2rem;
-      max-width: 800px;
-      margin: 2rem auto;
-      border-radius: 10px;
+    body.dark-mode header {
+      background-color: var(--header-dark);
     }
 
-    body.dark-mode section {
-      background-color: rgba(30, 30, 30, 0.8);
+    section {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
     }
 
     h2 {
-      color: #4e342e;
+      color: var(--section-title-light);
+    }
+
+    body.dark-mode h2 {
+      color: var(--section-title-dark);
     }
 
     .section-title {
@@ -59,47 +67,35 @@
     }
 
     footer {
-      background-color: #3e2723;
+      background-color: var(--footer-light);
       color: white;
       text-align: center;
       padding: 1rem;
       margin-top: 2rem;
     }
 
+    body.dark-mode footer {
+      background-color: var(--footer-dark);
+    }
+
     .toggle-btn {
       position: fixed;
-      top: 20px;
-      right: 20px;
-      background-color: #4e342e;
-      color: white;
+      top: 10px;
+      right: 10px;
+      padding: 0.5rem 1rem;
+      background-color: #ffcc80;
       border: none;
-      padding: 10px 15px;
-      border-radius: 8px;
+      border-radius: 5px;
       cursor: pointer;
-      z-index: 999;
-    }
-
-    .toggle-btn:hover {
-      background-color: #6d4c41;
-    }
-
-    a {
-      color: #d84315;
       font-weight: bold;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
-
 <body>
-  <button class="toggle-btn" onclick="toggleMode()">🌙 Toggle Mode</button>
+  <button class="toggle-btn" onclick="toggleMode()">Toggle Mode</button>
 
   <header>
-    <h1>Orfan Usef</h1>
+    <h1><a href="https://instagram.com/this_is_touaja" target="_blank" style="color: white; text-decoration: none;">Orfan Usef</a></h1>
     <p>AI Explorer | Content Creator | Future SaaS Builder</p>
   </header>
 
@@ -119,9 +115,7 @@
 
   <section>
     <h2 class="section-title">📬 Contact</h2>
-    <p>DM me on Instagram: 
-      <a href="https://instagram.com/this_is_touaja" target="_blank">@yooscripts</a>
-    </p>
+    <p>DM me on Instagram: <strong>@yooscripts</strong></p>
   </section>
 
   <footer>
@@ -135,5 +129,4 @@
   </script>
 </body>
 </html>
-
 
